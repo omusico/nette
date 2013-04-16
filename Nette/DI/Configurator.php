@@ -249,7 +249,7 @@ class Configurator extends Nette\Object
 		$compiler = new Compiler;
 		$compiler->addExtension('php', new Extensions\PhpExtension)
 			->addExtension('constants', new Extensions\ConstantsExtension)
-			->addExtension('nette', new Extensions\NetteExtension)
+			->addExtension('nette', new Nette\Bridges\DI\NetteExtension)
 			->addExtension('extensions', new Extensions\ExtensionsExtension);
 		return $compiler;
 	}
