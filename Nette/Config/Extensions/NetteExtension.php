@@ -419,6 +419,11 @@ class NetteExtension extends Nette\Config\CompilerExtension
 				$initialize->addBody('$this->getService(?);', array($name));
 			}
 		}
+
+		$class->addProperty('application');
+		$class->addProperty('router'); // TODO: write access
+		$initialize->addBody('$this->application = $this->getService("application");');
+		$initialize->addBody('$this->router = $this->getService("router");');
 	}
 
 

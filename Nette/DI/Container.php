@@ -285,6 +285,7 @@ class Container extends Nette\Object
 	 */
 	public function &__get($name)
 	{
+		trigger_error(__METHOD__ . '() is deprecated; use getService() instead.', E_USER_DEPRECATED);
 		if (!isset($this->registry[$name])) {
 			$this->getService($name);
 		}
@@ -301,6 +302,7 @@ class Container extends Nette\Object
 	 */
 	public function __set($name, $service)
 	{
+		trigger_error(__METHOD__ . '() is deprecated; use addService() instead.', E_USER_DEPRECATED);
 		$this->addService($name, $service);
 	}
 
@@ -313,6 +315,7 @@ class Container extends Nette\Object
 	 */
 	public function __isset($name)
 	{
+		trigger_error(__METHOD__ . '() is deprecated; use hasService() instead.', E_USER_DEPRECATED);
 		return $this->hasService($name);
 	}
 
@@ -324,6 +327,7 @@ class Container extends Nette\Object
 	 */
 	public function __unset($name)
 	{
+		trigger_error(__METHOD__ . '() is deprecated; use removeService() instead.', E_USER_DEPRECATED);
 		$this->removeService($name);
 	}
 

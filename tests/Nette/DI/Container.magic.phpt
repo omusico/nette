@@ -24,12 +24,12 @@ $two = new Service;
 
 
 $container = new Container;
-$container->one = $one;
+@$container->one = $one;
 
-Assert::true( isset($container->one) );
-Assert::false( isset($container->undefined) );
+Assert::true( @isset($container->one) );
+Assert::false( @isset($container->undefined) );
 
-Assert::same( $one, $container->one );
+Assert::same( $one, @$container->one );
 
-Assert::true( isset($container->one) );
-Assert::false( isset($container->undefined) );
+Assert::true( @isset($container->one) );
+Assert::false( @isset($container->undefined) );
